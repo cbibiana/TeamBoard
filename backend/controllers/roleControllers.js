@@ -25,6 +25,18 @@ const registerRole = async(req, res) => {
     return res.status(500).send({ message: "failed to register role" });
 
   res.status(200).send({ result });
+
+}; 
+
+const listRole = async (req, res) => {
+  let roles = await role.find();
+  // si quiero agregar un filtro , lo debo ingresar adentro
+
+  //si el tamaño de item de este arreglo es 0 esta vacio
+  if (roles.length === 0)
+    return res.status(400).send({ message: "No serch results" });
+
+  return res.status(200).send({ roles });
 };
 
-export default { registerRole };
+export default { registerRole, listRole };

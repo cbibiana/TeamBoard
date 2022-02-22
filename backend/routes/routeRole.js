@@ -9,5 +9,6 @@ const router = express.Router();
 //http://localhost:3001/api/role/registerRole
 //en post para registrar
 router.post("/registerRole", roleControllers.registerRole);
+router.get("/listRole", roleControllers.listRole);
 
 export default router;

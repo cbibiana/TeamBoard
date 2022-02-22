@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
   password: String,
   //para relacionar con otra tabla type:Schema.ObjectId busca en la tabla de mongodb
   role: { type: mongoose.Schema.ObjectId, ref: "roles" },
+  task: { type: mongoose.Schema.ObjectId, ref: "tasks" },
   registerDate: { type: Date, default: Date.now },
   dbStatus: Boolean,
 });
